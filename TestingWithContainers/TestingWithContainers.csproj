@@ -15,7 +15,8 @@
         <PackageReference Include="Marten" Version="6.2.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
         <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
-        <PackageReference Include="TestContainers.Container.Database.PostgreSql" Version="1.5.4" />
+        <PackageReference Include="Testcontainers" Version="3.5.0" />
+        <PackageReference Include="Testcontainers.PostgreSql" Version="3.5.0" />
         <PackageReference Include="xunit" Version="2.4.2"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

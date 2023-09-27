@@ -1,6 +1,4 @@
-using TestContainers.Container.Abstractions.Hosting;
-using TestContainers.Container.Database.Hosting;
-using TestContainers.Container.Database.PostgreSql;
+using Testcontainers.PostgreSql;
 
 namespace TestingWithContainers;
 
@@ -8,16 +6,15 @@ namespace TestingWithContainers;
 public class DatabaseFixture : IAsyncLifetime
 {
     private readonly PostgreSqlContainer container = 
-        new ContainerBuilder<PostgreSqlContainer>()
-            .ConfigureDatabaseConfiguration("jetbrains", "dotUltimate", "tools")
+        new PostgreSqlBuilder()
             .Build();
     
     public string ConnectionString => container.GetConnectionString();
-    public string ContainerId => $"{container.ContainerId}";
+    public string ContainerId => $"{container.Id}";
 
     public Task InitializeAsync() 
         => container.StartAsync();
 
     public Task DisposeAsync() 
-        => container.StopAsync();
+        => container.DisposeAsync().AsTask();
 }

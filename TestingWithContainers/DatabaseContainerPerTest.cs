@@ -2,9 +2,7 @@ using Dapper;
 using JasperFx.Core;
 using Marten;
 using Npgsql;
-using TestContainers.Container.Abstractions.Hosting;
-using TestContainers.Container.Database.Hosting;
-using TestContainers.Container.Database.PostgreSql;
+using Testcontainers.PostgreSql;
 using Weasel.Core;
 using Xunit.Abstractions;
 
@@ -16,8 +14,7 @@ public class DatabaseContainerPerTest(ITestOutputHelper output)
     // this is called for each test, since each test
     // instantiates a new class instance
     private readonly PostgreSqlContainer container = 
-        new ContainerBuilder<PostgreSqlContainer>()
-        .ConfigureDatabaseConfiguration("admin", "password", "test")
+        new PostgreSqlBuilder()
         .Build();
     
     private string connectionString = string.Empty;
@@ -74,7 +71,7 @@ public class DatabaseContainerPerTest(ITestOutputHelper output)
     {
         await container.StartAsync();
         connectionString = container.GetConnectionString();
-        output.WriteLine(container.ContainerId);
+        output.WriteLine(container.Id);
     }
 
     public Task DisposeAsync() => container.StopAsync();
