@@ -1,6 +1,5 @@
 using System.Data.Common;
 using Dapper;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
