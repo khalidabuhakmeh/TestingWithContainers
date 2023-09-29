@@ -12,5 +12,15 @@
         <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
+    
+    <ItemGroup>
+        <InternalsVisibleTo Include="TestingWithContainers" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.151" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0-rc.1.23421.29" />
+      <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
+    </ItemGroup>
 
 </Project>
