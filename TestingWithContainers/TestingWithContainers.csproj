@@ -28,4 +28,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TestingWithContainers.WebApp\TestingWithContainers.WebApp.csproj" />
+    </ItemGroup>
+
 </Project>
