@@ -14,6 +14,13 @@ As a general rule, it's best to start with **dependency per test**, as it provid
 
 The other strategies can be powerful in speeding up your test runs, but require thinking about initialization and clean-up strategies as state can "leak" between tests.
 
+## Other Scenarios You Might Be Interested In
+
+I've also included two tests that might be of interest to folks writing integration tests.
+Pulling an image from the registry ([HttpTest](./TestingWithContainers/HttpTest.cs)), and Building a custom image and running it as a container ([CustomContainerTest](./TestingWithContainers/CustomContainerTest.cs)).
+
+In general, TestContainers are infinitely configurable for your testing needs, but the library requires some work on your part.
+
 ## Getting Started
 
 You'll need the following to run these tests.
